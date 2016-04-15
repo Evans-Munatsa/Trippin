@@ -4,6 +4,8 @@ var minimum = require("../minimum");
 var dubs_min = require("../dbn_min");
 var records = require("../records");
 var records2 = require("../dbn_records")
+var trip1 = require("../single_trip")
+var trip2 = require("../single_trip_2")
 var assert = require("assert");
 
 var capeTownTaxis = [{
@@ -108,6 +110,10 @@ describe("Testing trips", function() {
 
         assert.deepEqual(records(capeTownTaxis, "CA 123 456"), block)
     })
+
+    it("returns how many trips CA 234 567 made", function() {
+        assert.equal(trip1(capeTownTaxis, "CA 234 567"), 11)
+    })
 })
 
 
@@ -136,5 +142,9 @@ describe("Durban transport", function() {
         }]
 
         assert.deepEqual(records2(durbanTaxis, "ND 123 456"), numbers);
+    })
+
+    it("should return how many trips ND 234 567 did", function(){
+      assert.equal(trip2(durbanTaxis, "ND 234 567"), 36)
     })
 })
