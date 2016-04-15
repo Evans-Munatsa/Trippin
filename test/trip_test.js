@@ -2,7 +2,8 @@ var trips = require("../trip");
 var dubs = require("../dbn_trips");
 var minimum = require("../minimum");
 var dubs_min = require("../dbn_min");
-var records = require("../records")
+var records = require("../records");
+var records2 = require("../dbn_records")
 var assert = require("assert");
 
 var capeTownTaxis = [{
@@ -119,5 +120,21 @@ describe("Durban transport", function() {
     it("should the lowest number of trips that any taxi in Durban made", function() {
         var result = dubs_min(durbanTaxis);
         assert.equal(result, 9);
+    })
+
+    it("should find the records matching  ND 123 456", function() {
+        var numbers = [{
+            "RegistrationNumber": "ND 123 456",
+            "Route": "Durban - University of KZN",
+            "Fare": 7,
+            "Trips": 14
+        }, {
+            "RegistrationNumber": "ND 123 456",
+            "Route": "Durban - Umbilo",
+            "Fare": 8,
+            "Trips": 15
+        }]
+
+        assert.deepEqual(records2(durbanTaxis, "ND 123 456"), numbers);
     })
 })
