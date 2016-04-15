@@ -1,0 +1,30 @@
+{
+  "name": "53functions",
+  "version": "1.0.0",
+  "description": "You can think of 53 functions as small bite size programming challenges which aim to prepare coders to do Code Katas. Each coder will have to clone this repository and start to commit their implementation of the functions. A central CI instance will run their functions and give them a score for each function based on how many tests are passing. These functions are not to be completed in one sitting, but are to be completed in the coders' own time.",
+  "main": "hello.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --reporter xunit-file",
+    "test_me": "./node_modules/mocha/bin/mocha ../the_tests  --reporter xunit-file"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codex-academy/53functions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codex-academy/53functions/issues"
+  },
+  "homepage": "https://github.com/codex-academy/53functions#readme",
+  "dependencies": {
+    "mocha": "^2.3.4"
+  },
+  "devDependencies": {
+    "xunit-file": "0.0.9"
+  }
+}
