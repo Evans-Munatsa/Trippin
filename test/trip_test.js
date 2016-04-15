@@ -90,6 +90,10 @@ describe("Testing trips", function() {
         var result = minimum(capeTownTaxis);
         assert.equal(result, 9);
     })
+
+    it("should find records maytching CA 123 456", function(){
+       
+    })
 })
 
 
