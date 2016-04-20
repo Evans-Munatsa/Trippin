@@ -124,22 +124,11 @@ describe("Cpt trips", function() {
     })
 
     it("returns the total earnings for each taxi", function() {
-        var cape = [{
-            Earnigs: 117,
-            RegistrationNumber: "CA 123 456"
-        }, {
-            Earnigs: 132,
-            RegistrationNumber: "CA 234 567"
-        }, {
-            Earnigs: 132,
-            RegistrationNumber: "CA 123 456"
-        }, {
-            Earnigs: 104,
-            RegistrationNumber: "CA 345 678"
-        }, {
-            Earnigs: 130,
-            RegistrationNumber: "CA 345 678"
-        }]
+        var cape = {
+            "CA 123 456": 249,
+            "CA 234 567": 132,
+            "CA 345 678": 234
+        }
         assert.deepEqual(cpt_totals(capeTownTaxis), cape)
     })
 })
@@ -186,34 +175,11 @@ describe("Durban transport", function() {
     })
 
     it("returns the total earnings for each taxi", function() {
-        var result = [{
-            Earnigs: 98,
-            RegistrationNumber: "ND 123 456"
-        }, {
-            Earnigs: 126,
-            RegistrationNumber: "ND 234 567"
-        }, {
-            Earnigs: 112,
-            RegistrationNumber: "ND 345 678"
-        }, {
-            Earnigs: 126,
-            RegistrationNumber: "ND 234 567"
-        }, {
-            Earnigs: 63,
-            RegistrationNumber: "ND 234 567"
-        }, {
-            Earnigs: 126,
-            RegistrationNumber: "ND 345 678"
-        }, {
-            Earnigs: 120,
-            RegistrationNumber: "ND 123 456"
-        }, {
-            Earnigs: 72,
-            RegistrationNumber: "ND 234 567"
-        }, {
-            Earnigs: 280,
-            RegistrationNumber: "ND 345 678"
-        }]
+        var result = {
+            "ND 123 456" : 218,
+            "ND 234 567" : 387,
+            "ND 345 678" : 518
+        }
         assert.deepEqual(cpt_totals(durbanTaxis), result)
     })
 })

@@ -1,22 +1,18 @@
 module.exports = function(money) {
-    var total = [];
+    var total = {};
     money.forEach(function(k) {
-        var result = {
-            RegistrationNumber: k.RegistrationNumber,
-            Earnigs: (k.Fare * k.Trips)
-        }
-        total.push(result)
+
+        var RegistrationNumber = k.RegistrationNumber;
+        var earnings = k.Fare * k.Trips;
+
+        if (total[RegistrationNumber] === undefined) {
+            total[RegistrationNumber] = 0;
+
+        };
+
+        total[RegistrationNumber] = total[RegistrationNumber] + earnings;
     });
+
+    console.log(total);
     return total;
 }
-
-// var earnings = [];
-
-// durbanTaxis.map(function(taxi){
-//   var result = {
-//     RegistrationNumber : taxi.RegistrationNumber,
-//     Earnigs : (taxi.Fare * taxi.Trips)
-//   }
-//   earnings.push(result)
-// })
-// console.log(earnings)
